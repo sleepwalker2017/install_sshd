@@ -2,9 +2,9 @@
 
 # 启动后台任务并保存 PID
 task=$1
-bash task &> task.log &
+bash $task &> task.log &
 pid=$!
-echo "Started run.sh with PID $pid"
+echo "Started task with PID $pid"
 
 # 每隔 10 秒检查 del 文件
 while true; do

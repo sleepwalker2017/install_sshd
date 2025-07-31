@@ -6,7 +6,7 @@ passwd=$2
 # 添加用户，设置密码（不复用 root UID）
 useradd -m -s /bin/bash $user
 echo '$user:$passwd' | chpasswd
-usermod -aG sudo user
+usermod -aG sudo $user
 
 # 修改 ssh 配置
 sed -i 's/^#\?\(PermitRootLogin\|PasswordAuthentication\).*/\1 yes/' /etc/ssh/sshd_config
